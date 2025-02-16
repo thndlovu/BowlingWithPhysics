@@ -96,6 +96,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8201773307605468430}
   - component: {fileID: 1879030195966385681}
+  - component: {fileID: -8270721475807229452}
   m_Layer: 0
   m_Name: Gutter
   m_TagString: Untagged
@@ -142,3 +143,15 @@ CapsuleCollider:
   m_Height: 80
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-8270721475807229452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6440820543814910937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56fb99d60905a4dae8a1e3dd1832a0e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
