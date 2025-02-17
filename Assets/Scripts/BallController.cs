@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(Rigidbody))]
 public class BallController : MonoBehaviour{
     [SerializeField] private float force = 1f;
     private bool isBallLaunched;
@@ -11,13 +12,18 @@ public class BallController : MonoBehaviour{
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start(){
         ballRB = GetComponent<Rigidbody>();
+        Cursor.lockState = CursorLockMode.Locked;
         inputManager.OnSpacePressed.AddListener(LaunchBall);
-        transform.parent = ballAnchor;
-        transform.localPosition = Vector3.zero;
-        ballRB.isKinematic = true;
-    
+        ResetBall();
     }
 
+    public void ResetBall(){
+        isBallLaunched = false;
+        ballRB.isKinematic = true;
+        launchIndicator.gameObject.SetActive(true);
+        transform.parent = ballAnchor;
+        transform.localPosition = Vector3.zero;
+    }
     // Update is called once per frame
     private void LaunchBall(){
         if(isBallLaunched) return;
